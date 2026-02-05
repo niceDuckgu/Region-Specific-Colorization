@@ -23,7 +23,7 @@ import modeling.register_model as modeling  # To register models
 import utils
 from datasets import build_pretraining_dataset_cropped_hintlab_fixmask, build_fixed_validation_dataset_cropped_hintlab_fixmask
 
-from engine import train_one_epoch, validate
+from engine_lab import train_one_epoch, validate
 from optim_factory import create_optimizer
 from utils import NativeScalerWithGradNormCount as NativeScaler
 
