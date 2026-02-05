@@ -1,0 +1,4 @@
+\n# Ignore large checkpoints\nsrc/ckpts/*.pth\n
+# Ignore large checkpoints
+src/ckpts/*.pth
+

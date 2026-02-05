@@ -9,14 +9,14 @@ from timm.models import create_model
 import torch
 
 from gui import gui_main
-from UCL.modeling import register_model  # noqa: F401 - needed for model registry side effects
+from src.modeling import register_model  # noqa: F401 - needed for model registry side effects
 
 
 def _default_paths():
     root = Path(__file__).resolve().parent
     return {
-        "model": root / "UCL" / "ckpts" / "icoloritv2lab_base_patch16_224_henc6_patchloss.pth",
-        "demo_image": root / "UCL" / "assets" / "flower.jpg",
+        "model": root / "src" / "ckpts" / "icoloritv2lab_base_patch16_224_henc6_patchloss.pth",
+        "demo_image": root / "src" / "assets" / "flower.jpg",
         "save_dir": root / "outputs" / "gui",
         "icon": root / "gui" / "icon.png",
     }

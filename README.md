@@ -11,6 +11,12 @@ Paper: [arXiv:2412.13469](https://arxiv.org/abs/2412.13469)
 
 > **Abstract:** *Point-based interactive colorization techniques allow users to effortlessly colorize grayscale images using user-provided color hints. However, point-based methods often face challenges when different colors are given to semantically similar areas, leading to color intermingling and unsatisfactory results—an issue we refer to as color collapse. The fundamental cause of color collapse is the inadequacy of points for defining the boundaries for each color. To mitigate color collapse, we introduce a lasso tool that can control the scope of each color hint. Additionally, we design a framework that leverages the user-provided lassos to localize the attention masks. The experimental results show that using a single lasso is as effective as applying 4.18 individual color hints and can achieve the desired outcomes in 30% less time than using points alone.*
 
+## Layout
+- `src/` – Core implementation (training, inference, models)
+- `gui/` – Interactive demo application (PyQt5)
+- `run_gui.py` – GUI entrypoint
+- `outputs/` – Results and checkpoints
+
 ## Demo 🎨
 
 Try colorizing images yourself with our GUI!
@@ -35,7 +41,7 @@ pip install -r requirements.txt
 You can generate colorization results using the provided inference script.
 
 ```bash
-cd UCL
+cd src
 python infer.py \
   --model_path ../outputs/your_model.pth \
   --val_data_path ../data/val/images \
@@ -59,13 +65,18 @@ val
 Run the training script:
 
 ```bash
-cd UCL
+cd src
 python train.py \
   --data_path ../data/train \
   --val_data_path ../data/val \
   --output_dir ../outputs \
   --exp_name my_experiment
 ```
+
+## Checkpoints
+
+Pretrained checkpoints are hosted on Hugging Face Hub:
+https://huggingface.co/sanghyeonlee/region-specific-colorization
 
 ## Citation
 
